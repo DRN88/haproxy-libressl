@@ -5,6 +5,7 @@ List of HAProxy build flags:
 http://git.haproxy.org/?p=haproxy-1.6.git;a=blob_plain;f=Makefile;hb=HEAD
 
 ## Quick build on CentOS 7 x86_64
+Edit haproxy.spec for versions and build flags.  
 ```bash
 sudo -i
 cd /root
