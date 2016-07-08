@@ -74,3 +74,7 @@ Total: 3 (3 usable), will use epoll.
 
 [root@rpmbuilder ~]#
 ```
+
+## Tips
+If you are experimenting and do not want to wait for LibreSSL to recompile from scratch comment out ./autogen.sh.  
+It will reuse the existing build.

@@ -73,7 +73,6 @@ cd portable-%{libressl_version}
 ./configure --prefix=%{_sourcedir}/static-libressl-%{libressl_version} --enable-shared=no --enable-static=yes
 make
 make install
-cd %{_sourcedir}
 
 %setup -q
 %patch0 -p0
