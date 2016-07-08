@@ -1,4 +1,6 @@
 %define libressl_version 2.3.6
+%define haproxy_extraoptions USE_REGPARM=1 USE_LINUX_SPLICE=1 USE_LIBCRYPT=1 USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_PCRE_JIT=1 USE_PCRE=1
+
 %define haproxy_user     haproxy
 %define haproxy_group    %{haproxy_user}
 %define haproxy_home     %{_localstatedir}/lib/haproxy
@@ -79,13 +81,17 @@ cd %{_sourcedir}
 #%patch2 -p1
 
 %build
-regparm_opts=
-%ifarch %ix86 x86_64
-regparm_opts="USE_REGPARM=1"
-%endif
+#regparm_opts=
+#%ifarch %ix86 x86_64
+#regparm_opts="USE_REGPARM=1"
+#%endif
 
+# Original build from centos 7 haproxy 1.5 SRPM
 #%{__make} %{?_smp_mflags} CPU="generic" TARGET="linux2628" USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1 ${regparm_opts} ADDINC="%{optflags}" USE_LINUX_TPROXY=1 ADDLIB="%{__global_ldflags}" DEFINE=-DTCP_USER_TIMEOUT=18
-%{__make} %{?_smp_mflags} ARCH=%{_target_cpu} TARGET="linux2628" USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_PCRE_JIT=1 USE_PCRE=1 USE_OPENSSL=1 SSL_INC=%{_sourcedir}/static-libressl-%{libressl_version}/include SSL_LIB=%{_sourcedir}/static-libressl-%{libressl_version}/lib ADDLIB="-ldl -lrt"
+
+# Static LibreSSL
+%{__make} %{?_smp_mflags} ARCH=%{_target_cpu} TARGET="linux2628" USE_OPENSSL=1 SSL_INC=%{_sourcedir}/static-libressl-%{libressl_version}/include SSL_LIB=%{_sourcedir}/static-libressl-%{libressl_version}/lib ADDLIB="-ldl -lrt" %{haproxy_extraoptions}
+
 
 pushd contrib/halog
 %{__make} halog OPTIMIZE="%{optflags}"
