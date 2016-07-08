@@ -14,7 +14,7 @@ Edit haproxy.spec for versions and build flags.
 sudo -i
 cd /root
 
-yum -y install rpmdevtools
+yum -y install rpmdevtools git
 
 git clone https://github.com/DRN88/haproxy-libressl.git
 cp -ra haproxy-libressl/rpm/centos7/rpmbuild /root/rpmbuild
