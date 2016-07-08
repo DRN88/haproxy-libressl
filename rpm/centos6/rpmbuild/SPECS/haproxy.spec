@@ -78,7 +78,7 @@ cd %{_sourcedir}
 wget "https://github.com/libressl-portable/portable/archive/v%{libressl_version}.tar.gz" -O %{_sourcedir}/v%{libressl_version}.tar.gz
 tar -xzf v%{libressl_version}.tar.gz
 cd portable-%{libressl_version}
-#./autogen.sh
+./autogen.sh
 ./configure --prefix=%{_sourcedir}/static-libressl-%{libressl_version} --enable-shared=no --enable-static=yes
 make
 make install
