@@ -39,7 +39,7 @@ rpmbuild -bb /root/rpmbuild/SPECS/haproxy.spec
 
 ## haproxy build flags check
 ```bash
-[root@rpmbuilder SPECS]# haproxy -vv
+[root@rpmbuilder ~]# haproxy -vv
 HA-Proxy version 1.6.6 2016/06/26
 Copyright 2000-2016 Willy Tarreau <willy@haproxy.org>
 
@@ -48,7 +48,7 @@ Build options :
   CPU     = generic
   CC      = gcc
   CFLAGS  = -m64 -march=x86-64 -O2 -g -fno-strict-aliasing -Wdeclaration-after-statement
-  OPTIONS = USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_OPENSSL=1 USE_PCRE=1 USE_PCRE_JIT=1
+  OPTIONS = USE_LINUX_SPLICE=1 USE_LINUX_TPROXY=1 USE_LIBCRYPT=1 USE_ZLIB=1 USE_REGPARM=1 USE_OPENSSL=1 USE_PCRE=1 USE_PCRE_JIT=1
 
 Default settings :
   maxconn = 2000, bufsize = 16384, maxrewrite = 1024, maxpollevents = 200
@@ -72,5 +72,5 @@ Available polling systems :
      select : pref=150,  test result OK
 Total: 3 (3 usable), will use epoll.
 
-
+[root@rpmbuilder ~]#
 ```
