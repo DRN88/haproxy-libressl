@@ -17,7 +17,7 @@ cd /root
 yum -y install rpmdevtools git
 
 git clone https://github.com/DRN88/haproxy-libressl.git
-cp -ra haproxy-libressl/rpm/centos7/rpmbuild /root/rpmbuild
+cp -ra haproxy-libressl/centos7/rpmbuild /root/rpmbuild
 
 spectool -g -R /root/rpmbuild/SPECS/haproxy.spec
 rpmbuild -bb /root/rpmbuild/SPECS/haproxy.spec
