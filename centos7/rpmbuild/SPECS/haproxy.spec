@@ -1,5 +1,5 @@
 %define libressl_version 2.3.6
-%define haproxy_extraoptions USE_REGPARM=1 USE_LINUX_SPLICE=1 USE_LIBCRYPT=1 USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_PCRE_JIT=1 USE_PCRE=1
+%define haproxy_extraoptions USE_REGPARM=1 USE_LINUX_SPLICE=1 USE_LIBCRYPT=1 USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_PCRE_JIT=1 USE_PCRE=1 USE_TFO=1
 
 %define haproxy_user     haproxy
 %define haproxy_group    %{haproxy_user}
