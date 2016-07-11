@@ -1,7 +1,4 @@
 # haproxy-libressl
-
-[![Build Status](https://drone.io/github.com/DRN88/haproxy-libressl/status.png)](https://drone.io/github.com/DRN88/haproxy-libressl/latest)  
-
 Open haproxy.spec first and learn how it works. Update variables like versions or haproxy build flags if needed.
 List of HAProxy build flags:  
 http://git.haproxy.org/?p=haproxy-1.6.git;a=blob_plain;f=Makefile;hb=HEAD
