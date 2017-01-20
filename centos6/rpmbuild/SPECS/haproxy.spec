@@ -1,4 +1,4 @@
-%define libressl_version 2.3.6
+%define libressl_version 2.4.5
 %define haproxy_extraoptions USE_REGPARM=1 USE_LINUX_SPLICE=1 USE_LIBCRYPT=1 USE_LINUX_TPROXY=1 USE_ZLIB=1 USE_PCRE=1 USE_TFO=1
 
 %define haproxy_user    haproxy
@@ -11,14 +11,14 @@
 
 Name: haproxy
 Summary: HAProxy is a TCP/HTTP reverse proxy for high availability environments
-Version: 1.6.6
+Version: 1.7.2
 Release: 1%{?dist}
 
 Group: System Environment/Daemons
 License: GPLv2+
 
 URL: http://www.haproxy.org/
-Source0: http://www.haproxy.org/download/1.6/src/haproxy-%{version}.tar.gz
+Source0: http://www.haproxy.org/download/1.7/src/haproxy-%{version}.tar.gz
 Source1: haproxy.init
 Source2: haproxy.cfg
 Source3: haproxy.logrotate
